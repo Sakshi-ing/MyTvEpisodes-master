@@ -87,6 +87,8 @@ extension TopTen_PageViewController: UITableViewDelegate,UITableViewDataSource
     @objc func addButton(sender:UIButton){
         let indexpath1 = IndexPath(row: sender.tag, section: 0)
         SelectedEpisode = episodeList[indexpath1.row].name
+        
+        
         let home = self.storyboard?.instantiateViewController(withIdentifier: "favoriteSegue")as! FavoritePage_ViewController
         self.navigationController?.pushViewController(home, animated: true)
     }

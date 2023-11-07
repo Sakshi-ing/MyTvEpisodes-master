@@ -9,13 +9,13 @@ class FavoritePage_ViewController: UIViewController,UITableViewDelegate,UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        FavfetchdataObj.FavoritefetchData { [weak self] FPEpisodeList in
-//            // Update the UI with the fetched data
-//            self?.FPEpisodeList = FPEpisodeList
-//            DispatchQueue.main.async {
-//                self?.Favorite_pageTV.reloadData()
-//            }
-//        }
+        FavfetchdataObj.FavoritefetchData { [weak self] FPEpisodeList in
+            // Update the UI with the fetched data
+            self?.FPEpisodeList = FPEpisodeList
+            DispatchQueue.main.async {
+                self?.Favorite_pageTV.reloadData()
+            }
+        }
 }
     @IBOutlet var FavoriteButton: UITabBarItem!
     override func didReceiveMemoryWarning() {
@@ -31,9 +31,9 @@ class FavoritePage_ViewController: UIViewController,UITableViewDelegate,UITableV
             let urlImage = URL(string: FPEpisodeList[indexPath.row].image.original)
             cell.Movie_Image.downloadImage(from: urlImage!)
             cell.Movie_Name?.text = FPEpisodeList[indexPath.row].name
-//            cell.Movie_Name.text = FPEpisodeList[tempList[indexPath.row]].name
+           // cell.Movie_Name.text = FPEpisodeList[tempList[indexPath.row]].name
             cell.movie_Date?.text = "\(FPEpisodeList[indexPath.row].schedule.days)"
-//          cell.movie_Season?.text = "\(FPEpisodeList[indexPath.row].number) , \(FPEpisodeList[indexPath.row].episodeOrder)"
+          //cell.movie_Season?.text = "\(FPEpisodeList[indexPath.row].number) , \(FPEpisodeList[indexPath.row].episodeOrder)"
         
         return cell
         }

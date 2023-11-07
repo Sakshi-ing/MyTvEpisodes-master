@@ -28,45 +28,45 @@ class fetchdataVM
     }
     
     //for Season view
-    
-//    func SeasonfetchData(completion: @escaping ([SeasonsData]) -> Void) {
-//        let url = URL(string: "https://api.tvmaze.com/shows/1/episodes")
-//        let dataTask = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-//            guard let data = data, error == nil else {
-//                print("Error occurred while accessing data with URL")
-//                return
-//            }
-//
-//            do {
-//                let SeasonListData = try JSONDecoder().decode([SeasonsData].self, from: data)
-//                print(SeasonListData)
-//                self.SeasonList = SeasonListData
-//                completion(SeasonListData) // Call the completion handler with the fetched data
-//            } catch {
-//                print("Error occurred while decoding JSON into Swift: \(error)")
-//            }
-//        })
-//        dataTask.resume()
-//    }
+
+    func SeasonfetchData(completion: @escaping ([SeasonsData]) -> Void) {
+        let url = URL(string: "https://api.tvmaze.com/shows/1/episodes")
+        let dataTask = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+            guard let data = data, error == nil else {
+                print("Error occurred while accessing data with URL")
+                return
+            }
+
+            do {
+                let SeasonListData = try JSONDecoder().decode([SeasonsData].self, from: data)
+                print(SeasonListData)
+                self.SeasonList = SeasonListData
+                completion(SeasonListData) // Call the completion handler with the fetched data
+            } catch {
+                print("Error occurred while decoding JSON into Swift: \(error)")
+            }
+        })
+        dataTask.resume()
+    }
     
     //for Favorite page
     
-//    func FavoritefetchData(completion: @escaping ([TopTenData]) -> Void) {
-//        let url = URL(string: "https://api.tvmaze.com/shows/:id/seasons")
-//        let dataTask = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-//            guard let data = data, error == nil else {
-//                print("Error occurred while accessing data with URL")
-//                return
-//            }
-//            do {
-//                let FavoriteListData = try JSONDecoder().decode([TopTenData].self, from: data)
-//                print(FavoriteListData)
-//                self.favoriteEpisode = FavoriteListData
-//                completion(FavoriteListData) // Call the completion handler with the fetched data
-//            } catch {
-//                print("Error occurred while decoding JSON into Swift: \(error)")
-//            }
-//        })
-//        dataTask.resume()
-//    }
+    func FavoritefetchData(completion: @escaping ([TopTenData]) -> Void) {
+        let url = URL(string: "https://api.tvmaze.com/shows/:id/seasons")
+        let dataTask = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+            guard let data = data, error == nil else {
+                print("Error occurred while accessing data with URL")
+                return
+            }
+            do {
+                let FavoriteListData = try JSONDecoder().decode([TopTenData].self, from: data)
+                print(FavoriteListData)
+                self.favoriteEpisode = FavoriteListData
+                completion(FavoriteListData) // Call the completion handler with the fetched data
+            } catch {
+                print("Error occurred while decoding JSON into Swift: \(error)")
+            }
+        })
+        dataTask.resume()
+    }
 }

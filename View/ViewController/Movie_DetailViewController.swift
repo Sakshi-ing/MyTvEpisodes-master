@@ -44,8 +44,11 @@ class Movie_DetailViewController: UIViewController   {
     var SeasonViewData = [SeasonDataList]()
     
     
+    
      override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
         SeasonViewData = [SeasonDataList(Opened: false, Title: "Season 1", SeactionData: ["Episode 1","Episode 2","Episode 3","Episode 4"]),
                           SeasonDataList(Opened: false, Title: "Season 2", SeactionData: ["Episode 1","Episode 2","Episode 3","Episode 4"]),
                           SeasonDataList(Opened: false, Title: "Season 3", SeactionData: ["Episode 1","Episode 2","Episode 3","Episode 4"])]
@@ -99,7 +102,7 @@ extension Movie_DetailViewController : UITableViewDelegate,UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return SeasonViewData.count
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if SeasonViewData[section].Opened==true{
             return SeasonViewData[section].SeactionData.count + 1
@@ -108,7 +111,7 @@ extension Movie_DetailViewController : UITableViewDelegate,UITableViewDataSource
             return 1
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var dataIndex = indexPath.row - 1
         if indexPath.row == 0{
@@ -142,6 +145,12 @@ extension Movie_DetailViewController : UITableViewDelegate,UITableViewDataSource
             }
         }
     }
-    
+
 }
+
+
+
+
+
+
 

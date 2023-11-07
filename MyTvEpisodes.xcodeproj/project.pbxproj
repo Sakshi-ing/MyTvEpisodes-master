@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		220D01522AEB9475003A792B /* SeasonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220D01512AEB9475003A792B /* SeasonData.swift */; };
+		2268E9AE2AFA615A0027762D /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268E9AD2AFA615A0027762D /* ExpandableCell.swift */; };
 		2283E4692ADD0B9100530101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283E4682ADD0B9100530101 /* AppDelegate.swift */; };
 		2283E46B2ADD0B9100530101 /* FavoritePage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283E46A2ADD0B9100530101 /* FavoritePage_ViewController.swift */; };
 		2283E46E2ADD0B9100530101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2283E46C2ADD0B9100530101 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		220D01512AEB9475003A792B /* SeasonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonData.swift; sourceTree = "<group>"; };
+		2268E9AD2AFA615A0027762D /* ExpandableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCell.swift; sourceTree = "<group>"; };
 		2283E4652ADD0B9100530101 /* MyTvEpisodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTvEpisodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2283E4682ADD0B9100530101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2283E46A2ADD0B9100530101 /* FavoritePage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePage_ViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				2283E4A32ADE7D7200530101 /* TopTen_TableViewCell.swift */,
 				228B28662AE161CC00844184 /* SettingsTableViewCell.swift */,
 				2283E4992ADD405800530101 /* Favorite_pageTableViewCell.swift */,
+				2268E9AD2AFA615A0027762D /* ExpandableCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				2283E4A02ADE4AFC00530101 /* TopTen_PageViewController.swift in Sources */,
 				2283E4692ADD0B9100530101 /* AppDelegate.swift in Sources */,
 				2283E4712ADD0B9100530101 /* MyTvEpisodes.xcdatamodeld in Sources */,
+				2268E9AE2AFA615A0027762D /* ExpandableCell.swift in Sources */,
 				228B28672AE161CC00844184 /* SettingsTableViewCell.swift in Sources */,
 				228B286A2AE25A1900844184 /* fetchdataVM.swift in Sources */,
 				220D01522AEB9475003A792B /* SeasonData.swift in Sources */,

@@ -22,7 +22,9 @@ struct TopTenData : Codable {
     let image: Image
     let summary: String
     let updated: Int
-   
+    
+//    let number : Int
+//    let episodeOrder : Int
 }
 struct Country :Codable{
     let name: String
