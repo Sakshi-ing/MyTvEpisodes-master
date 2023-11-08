@@ -6,6 +6,7 @@ class fetchdataVM
     var episodeList = [TopTenData]()
     var SeasonList = [SeasonsData]()
     var favoriteEpisode = [TopTenData]()
+   
     
     func fetchData(completion: @escaping ([TopTenData]) -> Void) {
         let url = URL(string: "https://api.tvmaze.com/shows")
@@ -29,8 +30,17 @@ class fetchdataVM
     
     //for Season view
 
-    func SeasonfetchData(completion: @escaping ([SeasonsData]) -> Void) {
-        let url = URL(string: "https://api.tvmaze.com/shows/1/episodes")
+    func SeasonfetchData(id:Int?,completion: @escaping ([SeasonsData]) -> Void) {
+//        guard let intId = id
+//            else{
+//                return
+//        }
+//        guard let urlString = "https://api.tvmaze.com/shows/"+String(intId)+"/episodes"
+//            else { return
+//        }
+        //let urlString = "https://api.tvmaze.com/shows/\(id)/episodes"
+        print(id)
+        let url = URL(string: "https://api.tvmaze.com/shows/\(id!)/episodes")
         let dataTask = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
             guard let data = data, error == nil else {
                 print("Error occurred while accessing data with URL")
