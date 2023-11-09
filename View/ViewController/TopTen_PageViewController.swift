@@ -5,6 +5,7 @@ import Foundation
 class TopTen_PageViewController: UIViewController {
     var fetchdataVMObj = fetchdataVM()
     var episodeList = [TopTenData]()
+    var Season_EpisodeList = [SeasonsData]()
     @IBOutlet var topTenTableView: UITableView!
    
     override func viewDidLoad() {
@@ -53,11 +54,13 @@ extension TopTen_PageViewController: UITableViewDelegate,UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = topTenTableView.dequeueReusableCell(withIdentifier: "topTenCell", for:indexPath)as!TopTen_TableViewCell
-        cell.AddButton.tag = indexPath.row
-        cell.AddButton.addTarget(self, action: #selector(addButton), for: .touchUpInside)
+        
         
         if episodeList[indexPath.row].image != nil
         {
+            //for Add Button
+            cell.AddButton.tag = indexPath.row
+            cell.AddButton.addTarget(self, action: #selector(addButton), for: .touchUpInside)
             
             let urlImage = URL(string: episodeList[indexPath.row].image.original)
             cell.TTimage.downloadImage(from: urlImage!)
@@ -76,7 +79,7 @@ extension TopTen_PageViewController: UITableViewDelegate,UITableViewDataSource
             if let rating = episodeList[indexPath.row].rating.average {
                 cell.TTratings.text = String(rating)
             } else {
-                cell.TTratings.text = nil  // Handle the case where the rating is missing or nil
+                cell.TTratings.text = nil
             }
         }
         else{
@@ -85,11 +88,13 @@ extension TopTen_PageViewController: UITableViewDelegate,UITableViewDataSource
         return cell
     }
     @objc func addButton(sender:UIButton){
+        
         let indexpath1 = IndexPath(row: sender.tag, section: 0)
         SelectedEpisode = episodeList[indexpath1.row].name
+//        SelectedEpisode = "\(episodeList[indexpath1.row].image)"
+//        SelectedEpisode = "\(episodeList[indexpath1.row].schedule.days)"
         
-        
-        let home = self.storyboard?.instantiateViewController(withIdentifier: "favoriteSegue")as! FavoritePage_ViewController
+         let home = self.storyboard?.instantiateViewController(withIdentifier: "favoriteSegue")as! FavoritePage_ViewController
         self.navigationController?.pushViewController(home, animated: true)
     }
         

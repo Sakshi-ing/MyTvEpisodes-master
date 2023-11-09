@@ -169,19 +169,15 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ExpandableCell
         let item = SeasonViewData[indexPath.row]
         
-        let date = item.airstamp // Replace this with your actual Date object
+        let date = item.airstamp
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, yyyy MMMM d" // Define the desired date format
+        dateFormatter.dateFormat = "yyyy MM d" // Define the desired date format
         
         let formattedDate = dateFormatter.date(from: date)
         cell.DateLabel.text = "\(formattedDate)"
             
         
-//        let isoDate = item.airstamp
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        let date = dateFormatter.date(from:isoDate)!
-//        print(date)
+
         
         cell.SeasonLabel.text = "Season \(item.season)"
         cell.EpisodeLabel.text = item.name
