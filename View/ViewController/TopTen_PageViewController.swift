@@ -90,11 +90,15 @@ extension TopTen_PageViewController: UITableViewDelegate,UITableViewDataSource
     @objc func addButton(sender:UIButton){
         
         let indexpath1 = IndexPath(row: sender.tag, section: 0)
-        SelectedEpisode = episodeList[indexpath1.row].name
+        
+        SelectedEpisodes.append(episodeList[indexpath1.row].name)
+        //SelectedEpisodes.append("\(Season_EpisodeList[indexpath1.row].season)")
+        //SelectedEpisode.append(episodeList[indexpath1.row].name)
+        //SelectedEpisode = episodeList[indexpath1.row].name
 //        SelectedEpisode = "\(episodeList[indexpath1.row].image)"
 //        SelectedEpisode = "\(episodeList[indexpath1.row].schedule.days)"
         
-         let home = self.storyboard?.instantiateViewController(withIdentifier: "favoriteSegue")as! FavoritePage_ViewController
+        let home = self.storyboard?.instantiateViewController(withIdentifier: "favoriteSegue")as! FavoritePage_ViewController
         self.navigationController?.pushViewController(home, animated: true)
     }
         

@@ -23,8 +23,6 @@ struct TopTenData : Codable {
     let summary: String
     let updated: Int
     
-//    let number : Int
-//    let episodeOrder : Int
 }
 struct Country :Codable{
     let name: String
@@ -215,12 +213,3 @@ enum TypeEnum : String, Codable{
 }
 
 }
-
-//struct SeasonData : Codable {
-//    let id: Int
-//    let url: String
-//    let number: Int
-//    let name: String
-//    let episodeOrder: Int
-//    let premiereDate, endDate: String
-//}

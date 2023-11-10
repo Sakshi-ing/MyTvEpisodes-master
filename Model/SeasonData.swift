@@ -6,12 +6,9 @@ struct SeasonsData : Codable {
     let url: String
     let name: String //episode name
     let season, number: Int
-//    let airdate: String
-//    //let airtime: Airtime
+//  let airdate: String
+//  let airtime: Airtime
     let airstamp: String
   }
-//enum Airtime {
-//    case the2200
-//}
 
 
